@@ -1,1 +1,25 @@
-console.log("Hello World");
+const { app, BrowserWindow } = require('electron');
+
+const createWindow = () => {
+  const win = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
+
+  win.loadFile('index.html');
+};
+
+app.whenReady().then(() => {
+  createWindow();
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  });
+  // opens a window if there is none on mac
+})
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+  // if windows or linux quit the app if you close the windows.
+});
+app.disableHardwareAcceleration();
+// used to fix eglQueryDeviceAttributeXT: Bad attribute error mentioned in issue https://github.com/electron/electron/issues/43415
