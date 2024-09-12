@@ -2,18 +2,22 @@
   "name": "electron-tutorial",
   "version": "1.0.0",
   "description": "tutorial for electron",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/kma3a/electron-tutorial.git"
   },
-  "author": "",
+  "author": "Kelsey Ando",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kma3a/electron-tutorial/issues"
   },
-  "homepage": "https://github.com/kma3a/electron-tutorial#readme"
+  "homepage": "https://github.com/kma3a/electron-tutorial#readme",
+  "devDependencies": {
+    "electron": "^32.1.0"
+  }
 }
